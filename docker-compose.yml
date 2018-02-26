@@ -1,0 +1,13 @@
+version: "3"
+services:
+  consul1:
+    image: "consul:latest"
+    container_name: "consul1"
+    hostname: "consul1"
+    ports:
+      - "8300:8300"
+      - "8400:8400"
+      - "8500:8500"
+    environment:
+      - CONSUL_BIND_INTERFACE=eth0
+      - 'CONSUL_LOCAL_CONFIG={"acl_datacenter":"dc1","acl_default_policy":"allow","acl_down_policy":"allow","acl_master_token":"af4c087e-f0b5-4074-b976-47431ddcdc1f","acl_agent_token":"af4c087e-f0b5-4074-b976-47431ddcdc1f"}'
